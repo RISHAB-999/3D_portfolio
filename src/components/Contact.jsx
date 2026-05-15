@@ -117,7 +117,9 @@ const Contact = () => {
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            disabled={loading}
+            aria-disabled={loading}
+            className={`bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${loading ? "opacity-50 cursor-not-allowed" : "hover:bg-tertiary/80"}`}
           >
             {loading ? "Sending..." : "Send"}
           </button>
